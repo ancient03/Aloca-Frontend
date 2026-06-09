@@ -1,11 +1,12 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "./assets/vite.svg";
+import heroImg from "./assets/hero.png";
+import "./App.css";
+import { Shell, LoaderCircle, Loader, LoaderPinwheel } from "lucide-react";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <>
@@ -16,7 +17,7 @@ function App() {
           <img src={viteLogo} className="vite" alt="Vite logo" />
         </div>
         <div>
-          <h1 className='font-bold'>Get started</h1>
+          <h1>Get started</h1>
           <p>
             Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
           </p>
@@ -28,6 +29,12 @@ function App() {
         >
           Count is {count}
         </button>
+        <div className="flex items-center justify-center gap-6">
+          <Shell className="w-32 h-32 animate-spin" />
+        <LoaderCircle className="w-32 h-32 animate-spin" />
+        <Loader className="w-32 h-32 animate-spin" />
+        <LoaderPinwheel className="w-32 h-32 animate-spin" />
+        </div>
       </section>
 
       <div className="ticks"></div>
@@ -116,7 +123,7 @@ function App() {
       <div className="ticks"></div>
       <section id="spacer"></section>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
