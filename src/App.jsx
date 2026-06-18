@@ -3,6 +3,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./layouts/Layout";
 import Dashboard from "./pages/user/Dashboard";
 import ErrorPage from "./pages/404";
+import LoginPage from "./pages/auth/LoginPage";
+import RegisterPage from "./pages/auth/RegisterPage";
 
 function App() {
   const AlocaRouter = createBrowserRouter([
@@ -16,6 +18,17 @@ function App() {
         },
       ],
     },
+
+    {
+      path: "/login",
+      element: <LoginPage />,
+    },
+
+    {
+      path: "/register",
+      element: <RegisterPage />,
+    }
+
   ]);
 
   return <RouterProvider router={AlocaRouter} />;
