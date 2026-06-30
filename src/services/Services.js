@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3000/api";
+const API_URL = "https://aloca-backend-production.up.railway.app/api";
 
 // Helper: request JSON dengan JWT otomatis
 const fetchWithAuth = async (endpoint, options = {}) => {
