@@ -5,6 +5,7 @@ import { formatDate } from '../../utils/format';
 import { User, Mail, Calendar, LogOut, Shield} from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
+import logo from "../../assets/logo.jpeg";
 
 const InfoRow = ({ icon: Icon, label, value }) => (
   <div className="flex items-center gap-3 py-3 border-b border-gray-50 last:border-0">
@@ -114,7 +115,9 @@ export const ProfilPage = () => {
             <CardBody>
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-xl bg-[#00C2A8]/10 flex items-center justify-center flex-shrink-0">
-                  <span className="text-lg">👝</span>
+                  <span className="text-lg">
+                    <img src={logo} alt="Logo" className="w-6 h-6" />
+                  </span>
                 </div>
                 <div className="flex-1">
                   <p className="text-sm font-semibold text-gray-900">Aloca.id</p>

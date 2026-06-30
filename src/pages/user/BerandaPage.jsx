@@ -16,6 +16,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import { ApiService } from "../../services/Services";
 import toast from "react-hot-toast";
+import logo from "../../assets/logo.jpeg";
 
 const TransaksiItem = ({ t }) => {
   const isPemasukan = t.tipe === "pemasukan";
@@ -102,7 +103,9 @@ export const BerandaPage = () => {
           <h1 className="text-xl font-bold text-gray-900">Dashboard</h1>
         </div>
         <div className="w-10 h-10 rounded-full bg-[#00C2A8]/10 flex items-center justify-center">
-          <span className="text-lg">👝</span>
+          <span className="text-lg">
+            <img src={logo} alt="Logo" className="w-6 h-6" />
+          </span>
         </div>
       </div>
 
