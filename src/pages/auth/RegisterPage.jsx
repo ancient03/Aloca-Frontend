@@ -4,6 +4,7 @@ import { Input } from '../../components/ui/Input';
 import { Button } from '../../components/ui/Button';
 import { Eye, EyeOff } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext'; // BARU: Import useAuth dari context
+import logo from "../../assets/logo.jpeg";
 
 const RegisterPage = () => {
   const [form, setForm] = useState({
@@ -73,27 +74,29 @@ const RegisterPage = () => {
   };
 
   return (
-    <div className="w-full flex min-h-screen">
+    <div className="flex w-full min-h-screen">
 
       {/* Left Panel */}
       <div className="hidden lg:flex lg:flex-1 flex-col items-center justify-center p-16 bg-gradient-to-br from-[#00C2A8] to-[#009F8A] relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-72 h-72 bg-white/10 rounded-full -translate-x-24 -translate-y-24" />
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/5 rounded-full translate-x-32 translate-y-32" />
+        <div className="absolute top-0 left-0 -translate-x-24 -translate-y-24 rounded-full w-72 h-72 bg-white/10" />
+        <div className="absolute bottom-0 right-0 translate-x-32 translate-y-32 rounded-full w-96 h-96 bg-white/5" />
 
         <div className="relative z-10 text-center">
-          <div className="w-20 h-20 bg-white/20 rounded-3xl flex items-center justify-center mx-auto mb-6 backdrop-blur-sm">
-            <span className="text-4xl">👝</span>
+          <div className="flex items-center justify-center w-20 h-20 mx-auto mb-6 bg-white/20 rounded-3xl backdrop-blur-sm">
+            <span className="text-4xl">
+              <img src={logo} alt="Logo" className="w-10 h-10" />
+            </span>
           </div>
 
-          <h1 className="text-4xl font-bold text-white mb-3">
+          <h1 className="mb-3 text-4xl font-bold text-white">
             Aloca.id
           </h1>
 
-          <p className="text-white/80 text-lg max-w-xs">
+          <p className="max-w-xs text-lg text-white/80">
             Bergabunglah dan mulai kelola keuanganmu lebih cerdas.
           </p>
 
-          <div className="mt-10 grid grid-cols-1 gap-3 text-left">
+          <div className="grid grid-cols-1 gap-3 mt-10 text-left">
             {[
               {
                 emoji: '💼',
@@ -113,16 +116,16 @@ const RegisterPage = () => {
             ].map((f) => (
               <div
                 key={f.title}
-                className="flex items-center gap-3 bg-white/10 rounded-xl px-4 py-3 backdrop-blur-sm"
+                className="flex items-center gap-3 px-4 py-3 bg-white/10 rounded-xl backdrop-blur-sm"
               >
                 <span className="text-2xl">{f.emoji}</span>
 
                 <div>
-                  <p className="text-white font-semibold text-sm">
+                  <p className="text-sm font-semibold text-white">
                     {f.title}
                   </p>
 
-                  <p className="text-white/70 text-xs">
+                  <p className="text-xs text-white/70">
                     {f.desc}
                   </p>
                 </div>
@@ -133,28 +136,30 @@ const RegisterPage = () => {
       </div>
 
       {/* Right Panel */}
-      <div className="flex-1 lg:max-w-md flex flex-col items-center justify-center p-8 bg-white">
+      <div className="flex flex-col items-center justify-center flex-1 p-8 bg-white lg:max-w-md">
 
-        <div className="lg:hidden text-center mb-8">
+        <div className="mb-8 text-center lg:hidden">
           <div className="w-16 h-16 bg-gradient-to-br from-[#00C2A8] to-[#009F8A] rounded-2xl flex items-center justify-center mx-auto mb-4">
-            <span className="text-3xl">👝</span>
+            <span className="text-3xl">
+              <img src={logo} alt="Logo" className="w-10 h-10" />
+            </span>
           </div>
 
           <h1 className="text-2xl font-bold text-gray-900">
             Aloca.id
           </h1>
 
-          <p className="text-gray-500 text-sm mt-1">
+          <p className="mt-1 text-sm text-gray-500">
             Mulai kelola keuanganmu
           </p>
         </div>
 
         <div className="w-full">
-          <h2 className="text-2xl font-bold text-gray-900 mb-1">
+          <h2 className="mb-1 text-2xl font-bold text-gray-900">
             Buat akun baru
           </h2>
 
-          <p className="text-sm text-gray-500 mb-8">
+          <p className="mb-8 text-sm text-gray-500">
             Gratis selamanya, tanpa kartu kredit
           </p>
 
@@ -195,7 +200,7 @@ const RegisterPage = () => {
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
-                className="absolute right-3 top-10 text-gray-500 hover:text-gray-700"
+                className="absolute text-gray-500 right-3 top-10 hover:text-gray-700"
               >
                 {showPassword ? (
                   <EyeOff size={18} />
@@ -215,13 +220,13 @@ const RegisterPage = () => {
             </Button>
 
             {errors.general && (
-              <p className="text-sm text-red-500 text-center -mt-1">
+              <p className="-mt-1 text-sm text-center text-red-500">
                 {errors.general}
               </p>
             )}
           </form>
 
-          <p className="text-center text-sm text-gray-500 mt-6">
+          <p className="mt-6 text-sm text-center text-gray-500">
             Sudah punya akun?{' '}
             <Link
               to="/login"
